@@ -14,7 +14,7 @@ function writePassword() {
 // lowercase, uppercase, numeric, and/or special characters
 // WHEN I answer each prompt
 function generatePassword() {
-  var lengthGen = lengthGenerator();
+  var length = lengthGenerator();
   var lowerC = lowerCaseGen();
   var upperC = upperCaseGen();
   var nums = numberGen();
@@ -22,31 +22,44 @@ function generatePassword() {
 
   // length between 8-128
   function lengthGenerator() {
-    window.prompt("How Many characters do you want your password to have, between 8 and 128")
-  
+    var pWordLength = prompt("How Many characters do you want your password to have, between 8 and 128");
+    console.log(pWordLength)
   }
 
   function lowerCaseGen() {
-    var LCIndex = "abcdefghijklmnopqrstuvwxyz";
-    window.prompt("How Many characters do you want your password to have, between 8 and 128")
-  
+    var LCIndex = "abcdefghijklmnopqrstuvwxyz".split(
+      ''
+      );
+      
+      var lowerCAnswer = prompt("Do you want lower case letters")
+      console.log(lowerCAnswer)
   }
 
   function upperCaseGen() {
-    var UCIndex =   "ABCDEFGHIJKLMNOPQRSTUVWZYX";
-    window.prompt("How Many characters do you want your password to have, between 8 and 128")
+    var UCIndex = "ABCDEFGHIJKLMNOPQRSTUVWZYX".split(
+      ''
+    );
+    var upperCAnswer = prompt("Do you want upper case letters")
+      console.log(upperCAnswer)
   
   }
 
   function numberGen() {
-    var NumIndex = "0123456789";
-    window.prompt("How Many characters do you want your password to have, between 8 and 128")
+    var NumIndex = "0123456789".split(
+      ''
+    );
+    
+    var numAnswer = prompt("Do you want numbers")
+      console.log(numAnswer)
   
   }
 
   function specialCharGen() {
-    var Specindex = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
-    window.prompt("How Many characters do you want your password to have, between 8 and 128")
+    var Specindex = "!#$%&'()*+,-.\"/:;<=>?@[]^_`\\{|}~".split( 
+      ''
+    );
+    var specialAnswer = prompt("Do you want special characters")
+      console.log(specialAnswer)
   
   }
 }
