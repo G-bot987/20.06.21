@@ -10,6 +10,23 @@ function writePassword() {
 
 }
 
+// function rndmLower() {
+//   return String.fromCharCode(Math.floor(Math.random() *26) +96);
+// }
+
+// function rndmUpper() {
+//   return String.fromCharCode(Math.floor(Math.random() *26) +64);
+// }
+
+// function rndmNum() {
+//   return String.fromCharCode(Math.floor(Math.random() *10) +47);
+// }
+
+
+
+
+console.log(String.fromCharCode(57));
+
 
 // lowercase, uppercase, numeric, and/or special characters
 // WHEN I answer each prompt
@@ -21,16 +38,19 @@ function generatePassword() {
   var specialChars = specialCharGen();
 
   // length between 8-128
+  // confirm
   function lengthGenerator() {
     var pWordLength = prompt("How Many characters do you want your password to have, between 8 and 128");
+
+
     if (pWordLength <= 128 && pWordLength >= 8) {
       window.alert("you choose " + pWordLength);
-      console.log(pWordLength)
+      var pWordNum = parseInt(pWordLength);
+      console.log(typeof pWordNum + pWordNum);
     }
     else { window.alert("you must choose a number between 8 and 128")
       lengthGenerator() };
-    // recursion 
-    // pWordLength =prompt
+    
 
   }
 
@@ -39,15 +59,16 @@ function generatePassword() {
       ''
     );
 
-    var lowerCAnswer = prompt("Do you want lower case letters, Y or N");
+    var lowerCAnswer = confirm("Do you want lower case letters");
 
-    lowerCAnswer = lowerCAnswer.toUpperCase();
-    if (lowerCAnswer == "Y") {
-      console.log("lower case yip");
+    
+    console.log(lowerCAnswer)
+    if (lowerCAnswer == true) {
+      console.log("lower case" + lowerCAnswer );
       window.alert("you choose " + lowerCAnswer);
-    } else if (lowerCAnswer == "N") {
+    } else if (lowerCAnswer == false) {
       window.alert("you choose " + lowerCAnswer)
-      console.log("lower case Nip");
+      console.log("lower case" + false);
     } else {
       window.alert("you must choose y or n, I believe in you");
       lowerCaseGen()
@@ -61,15 +82,15 @@ function generatePassword() {
       ''
     );
 
-    var upperCAnswer = prompt("Do you want upper case letters, Y or N")
+    var upperCAnswer = confirm("Do you want upper case letters")
 
-    upperCAnswer = upperCAnswer.toUpperCase();
-    if (upperCAnswer == "Y") {
-      console.log("upper case yip");
+    
+    if (upperCAnswer == true) {
+      console.log("upper case" + upperCAnswer);
       window.alert("you choose " + upperCAnswer);
-    } else if (upperCAnswer == "N") {
+    } else if (upperCAnswer == false) {
       window.alert("you choose " + upperCAnswer)
-      console.log("upper case Nip");
+      console.log("upper case" + upperCAnswer);
     } else {
       window.alert("you must choose y or n, I believe in you");
       upperCaseGen()
@@ -83,15 +104,15 @@ function generatePassword() {
       ''
     );
 
-    var numAnswer = prompt("Do you want numbers Y or N")
+    var numAnswer = confirm("Do you want numbers")
 
-    numAnswer = numAnswer.toUpperCase();
-    if (numAnswer == "Y") {
-      console.log("numbers yip");
+    
+    if (numAnswer == true) {
+      console.log("numbers " + numAnswer);
       window.alert("you choose " + numAnswer);
-    } else if (numAnswer == "N") {
+    } else if (numAnswer == false) {
       window.alert("you choose " + numAnswer)
-      console.log("numbers Nip");
+      console.log("numbers " + numAnswer  );
     } else {
       window.alert("you must choose y or n, I believe in you");
       numberGen()
@@ -104,15 +125,14 @@ function generatePassword() {
     var Specindex = "!#$%&'()*+,-.\"/:;<=>?@[]^_`\\{|}~".split(
       ''
     );
-    var specialAnswer = prompt("Do you want special characters, Y or N")
+    var specialAnswer = confirm("Do you want special characters")
 
-    specialAnswer = specialAnswer.toUpperCase();
-    if (specialAnswer == "Y") {
-      console.log("special yip");
+    if (specialAnswer == true) {
+      console.log("special " + specialAnswer);
       window.alert("you choose " + specialAnswer);
-    } else if (specialAnswer == "N") {
+    } else if (specialAnswer == false) {
       window.alert("you choose " + specialAnswer)
-      console.log("numbers Nip");
+      console.log("numbers" + specialAnswer);
     } else {
       window.alert("you must choose y or n, I believe in you");
       specialCharGen()
