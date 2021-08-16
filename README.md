@@ -3,6 +3,9 @@ Read me
 
 deployed at https://g-bot987.github.io/20.06.21/
 
+## screenshot 
+![](img/passwordgenerator.PNG)
+
 GIVEN I need a new, secure password
 WHEN I click the button to generate a password
 THEN I am presented with a series of prompts for password criteria
